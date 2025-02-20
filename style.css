@@ -1,0 +1,155 @@
+/* Impostazioni generali */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #0f1819;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Per evitare lo scroll se l'animazione esce fuori */
+}
+
+/* Contenitore principale */
+.container {
+    text-align: center;
+    position: relative;
+    top: 30%; /* Inizializza la posizione della pagina centrata */
+}
+
+/* Stile per il logo */
+.logo img {
+    position: absolute;
+    margin-top: -40vh; /* Posizione un po' sopra il bottone */
+    left: 50%; /* Centra il logo orizzontalmente */
+    transform: translateX(-50%); /* Shift per compensare la larghezza dell'immagine */
+    width: 700px; /* Puoi cambiare la dimensione a piacere */
+    height: auto;
+    display: block;
+}
+
+.logo1 img {
+    position: absolute;
+    margin-top: -40vh; /* Posizione un po' sopra il bottone */
+    right: -7.4%; /* Centra il logo orizzontalmente */
+    transform: translateX(-50%); /* Shift per compensare la larghezza dell'immagine */
+    width: 200px; /* Puoi cambiare la dimensione a piacere */
+    height: auto;
+    display: block;
+}
+
+.logo2 img {
+    position: absolute;
+    margin-top: -51vh; /* Posizione un po' sopra il bottone */
+    left: 5%; /* Centra il logo orizzontalmente */
+    transform: translateX(-50%); /* Shift per compensare la larghezza dell'immagine */
+    width: 200px; /* Puoi cambiare la dimensione a piacere */
+    height: auto;
+    display: block;
+}
+
+/* Contenitore del bottone */
+.login-btn {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;
+    margin-top: 20px; /* Distanza dal logo */
+}
+
+/* Stile per il bottone di login */
+.login-btn button {
+    background-color: #0f1819;
+    color: white;
+    border: 2px solid white;
+    padding: 20px 80px;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 20px; /* Angoli arrotondati */
+    transition: all 0.5s ease; /* Transizione fluida */
+    text-decoration: none; /* Rimuovi la sottolineatura predefinita */
+    text-transform: uppercase; /* Testo in maiuscolo */
+    opacity: 0;
+    transform: translateY(-50px); /* Partenza sopra */
+    animation: slideIn 0.5s forwards 0.5s; /* Animazione che parte dal top */
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Arriva alla sua posizione finale */
+    }
+}
+
+/* Effetto al passaggio del mouse */
+.login-btn button:hover {
+    background-color: white;
+    color: #0f1819;
+}
+
+/* Stile per il popup */
+#login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 300px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+#login-popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#login-popup h2 {
+    margin-bottom: 15px;
+    color: #0f1819;
+}
+
+#login-popup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-popup button {
+    background-color: #0f1819;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#login-popup button:hover {
+    background-color: #333;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+#overlay.active {
+    display: block;
+}
