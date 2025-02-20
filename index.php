@@ -2,7 +2,7 @@
 session_start();
 
 if ($_POST) {
-    // Connessione al database
+    // Connessione al databas
     $conn = new mysqli("localhost", "root", "", "z-volta");
     if ($conn->connect_error) {
         die("Errore di connessione: " . $conn->connect_error);
