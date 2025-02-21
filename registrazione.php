@@ -19,6 +19,7 @@ ATTENZIONE: TUTTI I CAMPI SONO OBBILIGATORI
         cognome <input type="text" name="cognome" required> <br>
         username <input type="text" name="username" required> <br>
         password <input type="password" name="password" required> <br>
+        coordinatore di riferimento <input type="text" name="coordrif"> <br>
         <input type="radio" value="gestore" name="ruolo"> Gestore 
         <input type="radio" value="coordinatore" name="ruolo"> Coordinatore 
         <input type="radio" value="utente" name="ruolo" checked> Utente  <br>
@@ -44,8 +45,9 @@ ATTENZIONE: TUTTI I CAMPI SONO OBBILIGATORI
         $cognome=$_POST["cognome"];
         $user=$_POST["username"];
         $ruolo=$_POST["ruolo"];
+        $coord=$_POST["coordrif"];
         $psw= password_hash ($_POST["password"], PASSWORD_DEFAULT);
-        $sql="INSERT INTO utente VALUE ('$cognome', '$nome', '$ruolo', '$psw', '$user' )";
+        $sql="INSERT INTO utente VALUE ('$cognome', '$nome', '$ruolo', '$psw', '$user','$coord' )";
         if ($conn -> query($sql)){
             echo "Utente registrato correttamente";
         }
