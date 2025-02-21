@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-if ($_POST) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Connessione al database
     $conn = new mysqli("localhost", "root", "", "z-volta");
     if ($conn->connect_error) {
         die("Errore di connessione: " . $conn->connect_error);
     }
     
-    // Recupera username e password inviati dal form.
+    // Recupera username e password inviati dal form
     $username = $_POST['username'];
     $password = $_POST['password'];
     
@@ -33,13 +33,13 @@ if ($_POST) {
         $_SESSION['username'] = $username;
         // Reindirizza in base al ruolo
         if ($ruolo == "utente") {
-            header("Location: utente.html");
+            header("Location: utente.php");
             exit;
         } elseif ($ruolo == "coordinatore") {
-            header("Location: coordinatore.html");
+            header("Location: coordinatore.php");
             exit;
         } elseif ($ruolo == "gestore") {
-            header("Location: gestore.html");
+            header("Location: gestore.php");
             exit;
         } else {
             echo "Ruolo non riconosciuto.";
@@ -85,10 +85,16 @@ if ($_POST) {
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
       <input type="text" name="username" id="username" placeholder="Username" required>
       <input type="password" name="password" id="password" placeholder="Password" required>
+      <div class="logo3">
+      <img src="man.png" alt="Logo Z-Volta">
+      </div>
+      <div class="logo4">
+      <img src="lock.png" alt="Logo Z-Volta">
+     </div>
       <!-- CAPTCHA lato client -->
       <div id="captcha-container">
         <canvas id="captcha" width="200" height="50"></canvas>
-        <input type="text" id="captcha-input" placeholder="Inserisci CAPTCHA" required>
+        <input type="text" id="captcha-input" placeholder="CAPTCHA" required>
       </div>
       <button type="submit" id="submit-login">Submit</button>
     </form>

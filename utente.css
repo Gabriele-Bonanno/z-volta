@@ -1,0 +1,73 @@
+/* utente.css */
+
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: linear-gradient(to right, #0f2027, #203a43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Logos positioning */
+.logo1,
+.logo2 {
+    position: absolute;
+    top: 20px;
+}
+
+.logo1 {
+    right: 20px;
+}
+
+.logo2 {
+    left: 20px;
+}
+
+/* Main logo */
+.logo img {
+    width: 300px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.container h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.container p {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Logout button */
+.logout-btn {
+    display: inline-block;
+    background-color: #0f1819;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #333;
+}

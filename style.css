@@ -12,53 +12,98 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Per evitare lo scroll se l'animazione esce fuori */
+    overflow: hidden;
+    /* Per evitare lo scroll se l'animazione esce fuori */
 }
 
 /* Contenitore principale */
 .container {
     text-align: center;
     position: relative;
-    top: 30%; /* Inizializza la posizione della pagina centrata */
+    top: 30%;
+    /* Inizializza la posizione della pagina centrata */
 }
 
 /* Stile per il logo */
 .logo img {
     position: absolute;
-    margin-top: -40vh; /* Posizione un po' sopra il bottone */
-    left: 50%; /* Centra il logo orizzontalmente */
-    transform: translateX(-50%); /* Shift per compensare la larghezza dell'immagine */
-    width: 700px; /* Puoi cambiare la dimensione a piacere */
+    margin-top: -40vh;
+    /* Posizione un po' sopra il bottone */
+    left: 50%;
+    /* Centra il logo orizzontalmente */
+    transform: translateX(-50%);
+    /* Shift per compensare la larghezza dell'immagine */
+    width: 700px;
+    /* Puoi cambiare la dimensione a piacere */
     height: auto;
     display: block;
 }
 
 .logo1 img {
     position: absolute;
-    margin-top: -40vh; /* Posizione un po' sopra il bottone */
-    right: -7.4%; /* Centra il logo orizzontalmente */
-    transform: translateX(-50%); /* Shift per compensare la larghezza dell'immagine */
-    width: 200px; /* Puoi cambiare la dimensione a piacere */
+    margin-top: -40vh;
+    /* Posizione un po' sopra il bottone */
+    right: -7.4%;
+    /* Centra il logo orizzontalmente */
+    transform: translateX(-50%);
+    /* Shift per compensare la larghezza dell'immagine */
+    width: 200px;
+    /* Puoi cambiare la dimensione a piacere */
     height: auto;
     display: block;
 }
 
 .logo2 img {
     position: absolute;
-    margin-top: -51vh; /* Posizione un po' sopra il bottone */
-    left: 5%; /* Centra il logo orizzontalmente */
-    transform: translateX(-50%); /* Shift per compensare la larghezza dell'immagine */
-    width: 200px; /* Puoi cambiare la dimensione a piacere */
+    margin-top: -51vh;
+    /* Posizione un po' sopra il bottone */
+    left: 5%;
+    /* Centra il logo orizzontalmente */
+    transform: translateX(-50%);
+    /* Shift per compensare la larghezza dell'immagine */
+    width: 200px;
+    /* Puoi cambiare la dimensione a piacere */
     height: auto;
     display: block;
 }
 
+.logo3 img {
+    position: absolute;
+    margin-top: -13.05vh;
+    /* Posizione un po' sopra il bottone */
+    left: 86%;
+    /* Centra il logo orizzontalmente */
+    transform: translateX(-50%);
+    /* Shift per compensare la larghezza dell'immagine */
+    width: 18px;
+    /* Puoi cambiare la dimensione a piacere */
+    height: auto;
+    display: block;
+}
+
+.logo4 img {
+    position: absolute;
+    margin-top: -5.85vh;
+    /* Posizione un po' sopra il bottone */
+    left: 86%;
+    /* Centra il logo orizzontalmente */
+    transform: translateX(-50%);
+    /* Shift per compensare la larghezza dell'immagine */
+    width: 18px;
+    /* Puoi cambiare la dimensione a piacere */
+    height: auto;
+    display: block;
+}
+
+
 /* Contenitore del bottone */
 .login-btn {
     display: flex;
-    justify-content: center; /* Centra orizzontalmente */
+    justify-content: center;
+    /* Centra orizzontalmente */
     align-items: center;
-    margin-top: 20px; /* Distanza dal logo */
+    margin-top: 20px;
+    /* Distanza dal logo */
 }
 
 /* Stile per il bottone di login */
@@ -69,19 +114,26 @@ body {
     padding: 20px 80px;
     font-size: 40px;
     cursor: pointer;
-    border-radius: 20px; /* Angoli arrotondati */
-    transition: all 0.5s ease; /* Transizione fluida */
-    text-decoration: none; /* Rimuovi la sottolineatura predefinita */
-    text-transform: uppercase; /* Testo in maiuscolo */
+    border-radius: 20px;
+    /* Angoli arrotondati */
+    transition: all 0.5s ease;
+    /* Transizione fluida */
+    text-decoration: none;
+    /* Rimuovi la sottolineatura predefinita */
+    text-transform: uppercase;
+    /* Testo in maiuscolo */
     opacity: 0;
-    transform: translateY(-50px); /* Partenza sopra */
-    animation: slideIn 0.5s forwards 0.5s; /* Animazione che parte dal top */
+    transform: translateY(-50px);
+    /* Partenza sopra */
+    animation: slideIn 0.5s forwards 0.5s;
+    /* Animazione che parte dal top */
 }
 
 @keyframes slideIn {
     to {
         opacity: 1;
-        transform: translateY(0); /* Arriva alla sua posizione finale */
+        transform: translateY(0);
+        /* Arriva alla sua posizione finale */
     }
 }
 
@@ -97,7 +149,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    background-color: #ffffff;
+    background: linear-gradient(to right, #d34343, #7243d2);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -107,13 +159,39 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
+#username, #password{
+    color: white; /* Text inside input fields will be black */
+    background-color: #0f1819; /* Optional: Ensure the background is white for contrast */
+    border: 1px solid #ccc; /* Optional: Add a subtle border */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#captcha-input {
+    color: white; /* Text color */
+    background-color: #0f1819; /* Background color */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 5px; /* Optional: Rounded corners */
+    
+    font-size: 14px; /* Smaller text */
+    text-align: center; /* Center the text inside */
+    margin-top: 10px;
+    width: auto; /* Width based on content */
+    min-width: 60px; /* Minimum width to avoid being too small */
+    max-width: 150px; /* Maximum width to avoid excessive growth */
+    height: 40px; /* Adjust height for text */
+    display: inline-block; /* Let it shrink-wrap around content */
+}
+
+
 #login-popup.active {
     transform: translate(-50%, -50%) scale(1);
 }
 
 #login-popup h2 {
     margin-bottom: 15px;
-    color: #0f1819;
+    color: white;
 }
 
 #login-popup input {
@@ -125,11 +203,11 @@ body {
 }
 
 #login-popup button {
-    background-color: #0f1819;
-    color: white;
+    background-color: #ffffff;
+    color: #0f1819;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px 40px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
@@ -145,7 +223,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #0f1819(0, 0, 0, 0.5);
     z-index: 999;
     display: none;
 }
