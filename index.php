@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("Errore di connessione: " . $conn->connect_error);
     }
     
-    // Recupera username e password inviati dal form
+    // Recupera username e password inviati dal formm
     $username = $_POST['username'];
     $password = $_POST['password'];
     
